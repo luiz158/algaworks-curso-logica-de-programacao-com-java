@@ -1,0 +1,1 @@
+insert into contato (id, nome, telefone) values (0, 'Maria', '+55 34 00000 0000'), (0, 'João', '+55 34 00000 0000'), (0, 'Normandes', '+55 34 00000 0000'), (0, 'Thiago', '+55 34 00000 0000'), (0, 'Alexandre', '+55 34 00000 0000');
