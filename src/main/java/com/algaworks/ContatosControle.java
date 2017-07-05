@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ContatosControle {
@@ -39,8 +40,10 @@ public class ContatosControle {
 	}	
 	
 	@PostMapping("/contatos")
-	public String cadastrar(Contato contato) {
+	public String cadastrar(Contato contato, RedirectAttributes attributes) {
 		contatos.save(contato);
+
+        attributes.addFlashAttribute("mensagem", "Cadastrado com sucesso!");
 		
 		return "redirect:/contatos";
 	}
@@ -57,8 +60,10 @@ public class ContatosControle {
 	}
 	
 	@PutMapping("/contatos/{id}")
-	public String atualizar(Contato contato) {
+	public String atualizar(Contato contato, RedirectAttributes attributes) {
 		contatos.save(contato);
+
+        attributes.addFlashAttribute("mensagem", "Alterado com sucesso!");
 		
 		return "redirect:/contatos";
 	}
